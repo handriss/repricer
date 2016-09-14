@@ -27,3 +27,7 @@ def not_found(error):
 from app.mod_auth.controllers import mod_auth as auth_module
 
 app.register_blueprint(auth_module)
+
+from app.mod_xls.controllers import mod_xls as xls_module
+
+app.register_blueprint(xls_module)

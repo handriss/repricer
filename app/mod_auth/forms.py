@@ -6,13 +6,10 @@ from app.mod_auth.models import Visitor
 import wtforms
 
 
-
 class LoginForm(Form):
-    # email = wtforms.TextField('Email Address')
-    # password = PasswordField('Password', [Required(message='Must provide a password. ;-)')])
 
-    name = wtforms.TextField('Email Address')
-    password = PasswordField('Password')
+    name = wtforms.TextField('Email Address', [Required(message='You must enter a username to sign in.')])
+    password = PasswordField('Password', [Required(message='You must provide a password to sign in.')])
 
     def __init__(self, *args, **kwargs):
         Form.__init__(self, *args, **kwargs)

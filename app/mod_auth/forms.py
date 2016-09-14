@@ -19,9 +19,9 @@ class LoginForm(Form):
         rv = Form.validate(self)
         if not rv:
             return False
-
-        user = Visitor.get(name=self.name.data)
-        if user is None:
+        try:
+            user = Visitor.get(name=self.name.data)
+        except DoesNotExist:
             self.name.errors.append('Unknown username')
             return False
 

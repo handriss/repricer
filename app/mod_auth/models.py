@@ -5,7 +5,6 @@ from flask_login import UserMixin
 
 
 class BaseModel(Model):
-    """A base model that will use our sqlite database"""
 
     class Meta:
         database = db

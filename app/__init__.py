@@ -6,11 +6,12 @@ from peewee import *
 db = SqliteDatabase('users.db')
 
 from app.mod_auth.models import *
+from app.mod_xls.models import *
 
 users = [{"name": "admin", "password": "admin"}, {"name": "admin2", "password": "admin2"}]
 db.connect()
-db.drop_tables([Visitor], safe=True)
-db.create_tables([Visitor], safe=True)
+db.drop_tables([Visitor, Book], safe=True)
+db.create_tables([Visitor, Book], safe=True)
 
 
 with db.atomic():

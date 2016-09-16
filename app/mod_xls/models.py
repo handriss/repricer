@@ -1,3 +1,14 @@
+from peewee import *
+import sqlite3
+from app import db
+
+
+class BaseModel(Model):
+
+    class Meta:
+        database = db
+
+
 class Book(BaseModel):
     status = CharField()
     description_id = IntegerField()

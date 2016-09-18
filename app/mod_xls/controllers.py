@@ -34,6 +34,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             processer = FileProcesser(UPLOAD_FOLDER + "/" + filename)
+            processer.add_to_database()
             return "műxik"
     return '''
     <!doctype html>

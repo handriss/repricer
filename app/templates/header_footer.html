@@ -21,23 +21,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand" href="/admin">Admin interface</a>
+                      <a class="navbar-brand" href="#">Bookline repricer</a>
                     </div>
 
                   <div class="collapse navbar-collapse" id="myNavbar">
                       <a href="#">{{ text|safe }}
                          <button name="applicants" class="btn btn-primary navbar-btn" data-toggle="tooltip" title="List applicants">
-                             Applicants
+                             Tömbös újraárazás
                          </button></a>
-                     <a href="#">{{ text|safe }}
-                         <button name="email_log" class="btn btn-primary navbar-btn" data-toggle="tooltip" title="List email-logs">
-                             Email Log
-                         </button>
-                     </a>
+
+                             <a href="#">{{ text|safe }}
+                                <button name="applicants" class="btn btn-primary navbar-btn" data-toggle="tooltip" title="List applicants">
+                                    Könyvenkénti újraárazás
+                                </button></a>
+
                       <div class="nav navbar-right" style="padding-right: 20px">
                           <a href="#">{{ text|safe }}
                               <button name="log_out" class="btn btn-primary navbar-btn">
-                                  <span class="glyphicon glyphicon-log-out"></span> Log out
+                                  <span class="glyphicon glyphicon-log-out"></span> Kijelentkezés
                               </button>
                           </a>
                       </div>
@@ -46,7 +47,7 @@
         </nav>
     </div>
 
-    <div class="container-fluid" id="body">
+    <!-- <div class="container-fluid" id="body">
         {% with messages = get_flashed_messages() %}
           {% if messages %}
             {% for message in messages %}
@@ -57,12 +58,12 @@
           {% endif %}
         {% endwith %}
         {% block body %}{% endblock %}
-    </div>
+    </div> -->
 
 
     <footer>
         <div class="container-fluid text-center">
-            <div class="navbar navbar-fixed-bottom">© Codecool | Starfish 2016</div>
+            <div class="navbar navbar-fixed-bottom">© Pestszentlőrinci Antikvárium | 2016</div>
         </div>
     </footer>
 

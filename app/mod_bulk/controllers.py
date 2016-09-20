@@ -9,4 +9,6 @@ mod_bulk = Blueprint('bulk', __name__, url_prefix='/bulk')
 @mod_bulk.route('/main/', methods=['GET'])
 def signin():
     books = Book.select()
-    return render_template("index.html", books=books)
+    # szerző, cím, vonalkód, tárolóhely, saját ár, bookline ár, újra kell-e árazni (hidden?), két link
+    titles = ['Szerző', 'Cím', 'Vonalkód', 'Tárolóhely', 'Saját ár', 'Bookline ár', 'Admin link', 'Bookline link']
+    return render_template("index.html", books=books, titles=titles)

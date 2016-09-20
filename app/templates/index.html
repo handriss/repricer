@@ -5,8 +5,9 @@
 {% endblock head %}
 
 {% block content %}
-    <h1>Hey Bro!</h1>
-    <p class="important">Welcome to my awesome page!</p>
+<ul>
+    {% for book in books %}
+     <li>{{ book.author }}</li>
+    {% endfor %}
+</ul>
 {% endblock content %}
-<h1>Hey Bro!</h1>
-<p class="important">Welcome to my awesome page!</p>

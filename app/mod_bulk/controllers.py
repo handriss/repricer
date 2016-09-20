@@ -8,9 +8,5 @@ mod_bulk = Blueprint('bulk', __name__, url_prefix='/bulk')
 
 @mod_bulk.route('/main/', methods=['GET'])
 def signin():
-    print("mukodj")
     books = Book.select()
-    my_list = [1, 3, 235, 4]
-    for book in books:
-        print(book.author)
-    return render_template("index.html")
+    return render_template("index.html", books=books)

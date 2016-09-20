@@ -34,3 +34,7 @@ class Book(BaseModel):
     annotation = TextField()
     publication_id = CharField()
     isbn = CharField()
+
+    bookline_price = CharField(null=True)
+    admin_link = CharField(null=True)
+    bookline_Link = CharField(null=True)

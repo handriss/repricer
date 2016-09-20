@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 import os
 from flask import Flask, request, redirect, url_for
 from werkzeug.utils import secure_filename
@@ -35,7 +35,7 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             processer = FileProcesser(UPLOAD_FOLDER + "/" + filename)
             processer.add_to_database()
-            return "műxik"
+            return render_template('index.html')
     return '''
     <!doctype html>
     <title>Upload new File</title>

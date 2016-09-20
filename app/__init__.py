@@ -32,3 +32,7 @@ app.register_blueprint(auth_module)
 from app.mod_xls.controllers import mod_xls as xls_module
 
 app.register_blueprint(xls_module)
+
+from app.mod_bulk.controllers import mod_bulk as bulk_module
+
+app.register_blueprint(bulk_module)

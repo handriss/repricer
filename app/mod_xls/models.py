@@ -10,6 +10,10 @@ class BaseModel(Model):
 
 
 class Book(BaseModel):
+    BOOKLINE_LINK_HEAD = "http://bookline.hu/search/search.action?inner=true&searchfield="
+    BOOKLINE_LINK_TAIL = "&tab=bookline.hu%2Fbook"
+    ADMIN_LINK_HEAD = "http://admin.bookline.hu/product/editBookProduct!input.action?apid=10:"
+
     status = CharField()
     description_id = CharField()
     book_id = CharField()
@@ -35,6 +39,12 @@ class Book(BaseModel):
     publication_id = CharField()
     isbn = CharField()
 
-    bookline_price = CharField(null=True)
     admin_link = CharField(null=True)
-    bookline_Link = CharField(null=True)
+    bookline_link = CharField(null=True)
+
+    def create_admin_link(self):
+        return str(self.ADMIN_LINK_HEAD + self.book_id)
+
+    def create_bookline_link(self):
+        inner_part = str((self.author + "+" + self.title).replace(" ", "+"))
+        return self.BOOKLINE_LINK_HEAD + inner_part + self.BOOKLINE_LINK_TAIL

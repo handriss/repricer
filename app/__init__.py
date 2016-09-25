@@ -28,13 +28,9 @@ def not_found(error):
     return render_template('404.html'), 404
 
 from app.mod_auth.controllers import mod_auth as auth_module
-
-app.register_blueprint(auth_module)
-
 from app.mod_xls.controllers import mod_xls as xls_module
-
-app.register_blueprint(xls_module)
-
 from app.mod_bulk.controllers import mod_bulk as bulk_module
 
+app.register_blueprint(auth_module)
+app.register_blueprint(xls_module)
 app.register_blueprint(bulk_module)

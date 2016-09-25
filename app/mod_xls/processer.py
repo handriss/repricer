@@ -29,3 +29,6 @@ class FileProcesser():
     def add_to_database(self):
         with db.atomic():
             Book.insert_many(self.dict_list).execute()
+
+    def add_links_to_database(self):
+        pass

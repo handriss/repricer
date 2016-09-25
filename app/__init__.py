@@ -1,5 +1,5 @@
-# Import flask and template operators
 from flask import Flask, render_template
+from flask_socketio import SocketIO, send
 import sqlite3
 from peewee import *
 
@@ -19,6 +19,8 @@ with db.atomic():
 
 app = Flask(__name__)
 app.config.from_object('config')
+
+socketio = SocketIO(app)
 
 
 @app.errorhandler(404)

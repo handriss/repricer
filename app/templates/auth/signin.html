@@ -11,6 +11,14 @@
 </div>
 {% endmacro %}
 
+{% extends "bare.html" %}
+{% block title %}Index{% endblock title %}
+{% block head %}
+    {{ super() }}
+{% endblock head %}
+
+{% block content %}
+
 <div>
   <div>
     <legend>Sign in</legend>
@@ -47,3 +55,4 @@
     </form>
   </div>
 </div>
+{% endblock content %}
